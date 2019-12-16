@@ -1,0 +1,1 @@
+{"version":3,"sources":["Cast.module.css"],"names":[],"mappings":"AAAA,mBACE,eAAgB,CAChB,YACF,CAEA,kBACE,eACF","file":"main.fb93dcf9.chunk.css","sourcesContent":[".image {\n  max-width: 250px;\n  height: 300px;\n}\n\n.list {\n  list-style: none;\n}\n"]}
