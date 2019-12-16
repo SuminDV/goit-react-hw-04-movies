@@ -1,18 +1,32 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import * as API from '../../services/api';
 import routes from '../../routes';
 
 export default class MoviesPage extends Component {
+  static propTypes = {
+    history: PropTypes.shape({}).isRequired,
+    location: PropTypes.shape({}).isRequired,
+  };
+
   state = {
     query: '',
     searchFilms: [],
   };
 
-  // componentDidMount() {
-  //   // let;
-  // }
+  componentDidMount() {
+    const { location } = this.props;
+    const getMovies = new URLSearchParams(location.search).get('query');
+    console.log('getMovies', getMovies);
+    if (!getMovies) {
+      return;
+    }
+    this.onSubmit(getMovies);
+  }
 
   onSubmit = query => {
     const { history } = this.props;

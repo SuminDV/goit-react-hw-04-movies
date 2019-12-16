@@ -1,7 +1,14 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import * as API from '../../services/api';
 
 export default class Reviews extends Component {
+  static propTypes = {
+    match: PropTypes.shape({}).isRequired,
+    movieId: PropTypes.shape({}).isRequired,
+  };
+
   state = {
     reviews: [],
   };
